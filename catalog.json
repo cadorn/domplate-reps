@@ -1,4 +1,10 @@
 {
     "schema": "1.1",
-    "packages": {}
+    "location": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+    "packages": {
+        "lang-php": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/lang-php"
+        }
+    }
 }

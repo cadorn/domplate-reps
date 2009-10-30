@@ -4,8 +4,9 @@
         "narwhal"
     ],
     "using": {
-        "domplate": {
-            "location": "http://github.com/cadorn/domplate/zipball/master/"
+        "lang-php": {
+            "catalog": "file://./catalog.json",
+            "name": "lang-php"
         }
     }
 }

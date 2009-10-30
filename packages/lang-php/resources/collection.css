@@ -1,0 +1,42 @@
+
+DIV.__domplate_rep__ {
+
+}
+
+DIV.__domplate_rep__ SPAN.php-string {
+  color: #FF0000;
+}
+
+DIV.__domplate_rep__ SPAN.php-boolean {
+  color: #0000FF;
+}
+
+DIV.__domplate_rep__ SPAN.php-number {
+  color: #00FF00;
+}
+
+DIV.__domplate_rep__ SPAN.php-object {
+  color: magenta;
+}
+
+DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren .treeLabel {
+    background-image: url(__Package.ResourcesBaseURL__images/twistyClosed.png);
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+}
+
+DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren.opened .treeLabel {
+    background-image: url(__Package.ResourcesBaseURL__images/twistyOpen.png);
+}
+
+DIV.__domplate_rep__ TABLE.php-object .treeRow .treeLabel {
+    padding-left: 18px;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren .treeLabel:hover {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
