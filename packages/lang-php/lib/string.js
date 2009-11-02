@@ -6,12 +6,12 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        tag: DIV({class: "__domplate_rep__"},
-                 SPAN({class: "php-string"},
+        tag: DIV({"class": "__domplate_rep__"},
+                 SPAN({"class": "php-string"},
                       "'$object'")),
         
-        shortTag: DIV({class: "__domplate_rep__"},
-                       SPAN({class: "php-string"},
+        shortTag: DIV({"class": "__domplate_rep__"},
+                       SPAN({"class": "php-string"},
                             "'$object|cropString'")),
 
         

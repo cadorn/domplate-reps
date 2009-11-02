@@ -1,0 +1,16 @@
+{
+    "name": "devtools",
+    "dependencies": [
+        "github.com/cadorn/narwhal/raw/experimental/catalogs/jack"
+     ],
+    "using": {
+        "jack": {
+            "catalog": "http://github.com/cadorn/narwhal/raw/experimental/catalogs/default.catalog.json",
+            "name": "jack"
+        },
+        "reps-lang-php": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "lang-php"
+        }
+    }
+}

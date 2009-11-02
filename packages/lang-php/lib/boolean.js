@@ -6,12 +6,12 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        tag: DIV({class: "__domplate_rep__"},
-                 SPAN({class: "php-boolean"},
+        tag: DIV({"class": "__domplate_rep__"},
+                 SPAN({"class": "php-boolean"},
                       "$object")),
         
-        shortTag: DIV({class: "__domplate_rep__"},
-                       SPAN({class: "php-boolean"},
+        shortTag: DIV({"class": "__domplate_rep__"},
+                       SPAN({"class": "php-boolean"},
                             "$object")),
 
         supportsObject: function(object, type) {

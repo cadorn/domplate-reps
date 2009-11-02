@@ -5,6 +5,10 @@
         "lang-php": {
             "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
             "path": "packages/lang-php"
+        },
+        "devtools": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/devtools"
         }
     }
 }

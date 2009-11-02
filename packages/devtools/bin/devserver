@@ -1,0 +1,3 @@
+#!/usr/bin/env narwhal
+
+require("devserver", "github.com/cadorn/domplate-reps/raw/master/devtools").jackup(system.args);

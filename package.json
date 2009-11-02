@@ -5,8 +5,12 @@
     ],
     "using": {
         "lang-php": {
-            "catalog": "file://./catalog.json",
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
             "name": "lang-php"
+        },
+        "devtools": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "devtools"
         }
     }
 }

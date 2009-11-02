@@ -6,23 +6,23 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        shortTag: DIV({class: "__domplate_rep__"},
-                       SPAN({class: "php-object"},
+        shortTag: DIV({"class": "__domplate_rep__"},
+                       SPAN({"class": "php-object"},
                             "$object")),
     
       tag:
-        DIV({class: "__domplate_rep__"}, TABLE({class: "php-object", onclick: "$onClick"},
+        DIV({"class": "__domplate_rep__"}, TABLE({"class": "php-object", "onclick": "$onClick"},
           TBODY(
             FOR("member", "$object|memberIterator",
-              TAG("$row", {member: "$member"}))
+              TAG("$row", {"member": "$member"}))
           )
         )),
     
       row:
-        TR({class: "treeRow", $hasChildren: "$member.hasChildren",
-            _repObject: "$member", level: "$member.level"},
-          TD({style: "padding-left: $member.indent\\px"},
-            DIV({class: "treeLabel"},
+        TR({"class": "treeRow", "$hasChildren": "$member.hasChildren",
+            "_repObject": "$member", "level": "$member.level"},
+          TD({"style": "padding-left: $member.indent\\px"},
+            DIV({"class": "treeLabel"},
                 "$member.name")
           ),
           TD(
@@ -32,7 +32,7 @@ with (DOMPLATE.tags) {
     
       loop:
         FOR("member", "$members",
-          TAG("$row", {member: "$member"})),
+          TAG("$row", {"member": "$member"})),
     
     
       memberIterator: function(object)
@@ -42,7 +42,7 @@ with (DOMPLATE.tags) {
     
       onClick: function(event)
       {
-        if (!isLeftClick(event))
+        if (!this.isLeftClick(event))
           return;
     
         var row = this.getAncestorByClass(event.target, "treeRow");
@@ -106,7 +106,10 @@ with (DOMPLATE.tags) {
         };
       },
     
-
+isLeftClick: function(event)
+{
+    return event.button == 0 && this.noKeyModifiers(event);
+},
 
 getAncestorByClass: function(node, className)
 {
