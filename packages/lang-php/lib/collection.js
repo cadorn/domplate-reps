@@ -1,8 +1,8 @@
 
-var REPS = require("reps", "domplate");
+var COLLECTION = require("collection", "domplate");
 
 
-var collection = REPS.Collection();
+var collection = COLLECTION.Collection();
 
 // Load all reps
 

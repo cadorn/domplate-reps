@@ -1,10 +1,11 @@
 
 var DOMPLATE = require("domplate", "domplate");
+var DEFAULT_REP = require("default-rep", "domplate");
 
 
 with (DOMPLATE.tags) {
 
-    exports.rep = DOMPLATE.domplate({
+    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
 
         shortTag: DIV({"class": "__domplate_rep__"},
                        SPAN({"class": "php-object"},
@@ -55,9 +56,9 @@ with (DOMPLATE.tags) {
       {
         var level = parseInt(row.getAttribute("level"));
     
-        if (hasClass(row, "opened"))
+        if (this.hasClass(row, "opened"))
         {
-          removeClass(row, "opened");
+          this.removeClass(row, "opened");
 
           var tbody = row.parentNode;
           for (var firstRow = row.nextSibling; firstRow;
@@ -70,7 +71,7 @@ with (DOMPLATE.tags) {
         }
         else
         {
-          setClass(row, "opened");
+          this.setClass(row, "opened");
     
           var repObject = row.repObject;
           if (repObject) {
@@ -106,45 +107,11 @@ with (DOMPLATE.tags) {
         };
       },
     
-isLeftClick: function(event)
-{
-    return event.button == 0 && this.noKeyModifiers(event);
-},
-
-getAncestorByClass: function(node, className)
-{
-    for (var parent = node; parent; parent = parent.parentNode)
-    {
-        if (this.hasClass(parent, className))
-            return parent;
-    }
-
-    return null;
-},
-
-hasClass: function(node, name) // className, className, ...
-{
-    if (!node || node.nodeType != 1)
-        return false;
-    else
-    {
-        for (var i=1; i<arguments.length; ++i)
-        {
-            var name = arguments[i];
-            var re = new RegExp("(^|\\s)"+name+"($|\\s)");
-            if (!re.exec(node.getAttribute("class")))
-                return false;
-        }
-
-        return true;
-    }
-},
-
         supportsObject: function(object, type) {
             return type == "object";
         }
         
-    });
+    }));
 
 }
 
