@@ -6,14 +6,11 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        tag: DIV({"class": "__domplate_rep__"},
-                 SPAN({"class": "php-string"},
-                      "'$object'")),
+        tag: SPAN({"class": "__domrep__lang-php-string"},
+                   "'$object'"),
         
-        shortTag: DIV({"class": "__domplate_rep__"},
-                       SPAN({"class": "php-string"},
-                            "'$object|cropString'")),
-
+        shortTag: SPAN({"class": "__domrep__lang-php-string"},
+                            "'$object|cropString'"),
         
         supportsObject: function(object, type){
             return type == "string";

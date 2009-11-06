@@ -1,32 +1,17 @@
 
-DIV.__domplate_rep__ {
-
-}
-
-DIV.__domplate_rep__ SPAN.php-string {
-  color: #FF0000;
-}
-
-DIV.__domplate_rep__ SPAN.php-boolean {
-  color: #0000FF;
-}
-
-DIV.__domplate_rep__ SPAN.php-number {
-  color: #00FF00;
-}
 
 DIV.__domplate_rep__ SPAN.php-object {
   color: magenta;
 }
 
 DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren .treeLabel {
-    background-image: url(__Package.ResourcesBaseURL__images/twistyClosed.png);
+    background-image: url(__Package.ResourcesBaseURL__images/TwistyClosed.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
 }
 
 DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren.opened .treeLabel {
-    background-image: url(__Package.ResourcesBaseURL__images/twistyOpen.png);
+    background-image: url(__Package.ResourcesBaseURL__images/TwistyOpen.png);
 }
 
 DIV.__domplate_rep__ TABLE.php-object .treeRow .treeLabel {
@@ -39,4 +24,84 @@ DIV.__domplate_rep__ TABLE.php-object .treeRow.hasChildren .treeLabel:hover {
     color: blue;
     cursor: pointer;
     text-decoration: underline;
+}
+
+
+
+/*######################################################################
+#   lang-php/string
+#####################################################################*/
+
+SPAN.__domrep__lang-php-string {
+  color: #FF0000;
+}
+
+
+/*######################################################################
+#   lang-php/number
+#####################################################################*/
+
+SPAN.__domrep__php-number {
+  color: green;
+}
+
+
+/*######################################################################
+#   lang-php/boolean
+#####################################################################*/
+
+SPAN.__domrep__php-boolean {
+  color: blue;
+}
+
+
+/*######################################################################
+#   lang-php/null
+#####################################################################*/
+
+SPAN.__domrep__php-null {
+  color: blue;
+}
+
+
+/*######################################################################
+#   lang-php/class
+#####################################################################*/
+
+SPAN.__domrep__lang-php-class > SPAN {
+    color: brown;
+    font-weight: bold;
+}
+
+SPAN.__domrep__lang-php-class > DIV.member {
+    display: block;
+    padding-left: 9px;
+}
+
+SPAN.__domrep__lang-php-class > DIV.member > SPAN.delim {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+SPAN.__domrep__lang-php-class > DIV.member > SPAN.public {
+  background: url(__Package.ResourcesBaseURL__images/ObjectMemberVisibilityIcons.png) no-repeat -4px -98px;
+  padding-left: 12px;
+}
+
+
+/*######################################################################
+#   lang-php/array
+#####################################################################*/
+
+SPAN.__domrep__lang-php-array > SPAN {
+}
+
+SPAN.__domrep__lang-php-array > DIV.item {
+    display: block;
+    padding-left: 9px;
+}
+
+SPAN.__domrep__lang-php-array > DIV.item > SPAN.delim {
+    padding-left: 5px;
+    padding-right: 5px;
 }

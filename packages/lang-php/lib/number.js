@@ -6,13 +6,11 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        tag: DIV({"class": "__domplate_rep__"},
-                 SPAN({"class": "php-number"},
-                      "$object")),
+        tag: SPAN({"class": "__domrep__php-number"},
+                      "$object"),
         
-        shortTag: DIV({"class": "__domplate_rep__"},
-                       SPAN({"class": "php-number"},
-                            "$object")),
+        shortTag: SPAN({"class": "__domrep__php-number"},
+                            "$object"),
 
         supportsObject: function(object, type) {
             return type == "number";

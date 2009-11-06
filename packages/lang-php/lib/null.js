@@ -6,14 +6,14 @@ with (DOMPLATE.tags) {
 
     exports.rep = DOMPLATE.domplate({
 
-        tag: SPAN({"class": "__domrep__php-boolean"},
+        tag: SPAN({"class": "__domrep__php-null"},
                       "$object"),
         
-        shortTag: SPAN({"class": "__domrep__php-boolean"},
+        shortTag: SPAN({"class": "__domrep__php-null"},
                             "$object"),
 
         supportsObject: function(object, type) {
-            return type == "boolean";
+            return (type=="object" && object==null);
         }
         
     });
