@@ -1,0 +1,8 @@
+{
+    "name": "content",
+    "using": {
+        "domplate": {
+            "location": "http://github.com/cadorn/domplate/zipball/master/"
+        }
+    }
+}

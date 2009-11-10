@@ -6,6 +6,9 @@ var collection = COLLECTION.Collection();
 
 // Load all reps
 
+collection.addRep(require("./trace"));
+collection.addRep(require("./exception"));
+
 collection.addRep(require("./null"));
 collection.addRep(require("./string"));
 collection.addRep(require("./boolean"));

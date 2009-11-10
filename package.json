@@ -11,6 +11,22 @@
         "devtools": {
             "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
             "name": "devtools"
+        },
+        "structures": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "structures"
+        },
+        "lang-js": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "lang-js"
+        },
+        "specifications": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "specifications"
+        },
+        "content": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "content"
         }
     }
 }

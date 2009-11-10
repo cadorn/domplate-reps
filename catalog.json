@@ -9,6 +9,22 @@
         "devtools": {
             "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
             "path": "packages/devtools"
+        },
+        "structures": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/structures"
+        },
+        "lang-js": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/lang-js"
+        },
+        "specifications": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/specifications"
+        },
+        "content": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/content"
         }
     }
 }
