@@ -25,6 +25,10 @@
         "content": {
             "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
             "path": "packages/content"
+        },
+        "fc-object-graph": {
+            "location": "http://github.com/cadorn/domplate-reps/zipball/master/",
+            "path": "packages/fc-object-graph"
         }
     }
 }

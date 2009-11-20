@@ -1,0 +1,117 @@
+
+
+/*######################################################################
+#   fc-object-graph/text
+#####################################################################*/
+
+SPAN.__domrep__fc-object-graph-text {
+  color: #FF0000;
+}
+
+
+
+/*######################################################################
+#   fc-object-graph/constant
+#####################################################################*/
+
+SPAN.__domrep__fc-object-graph-constant {
+  color: #0000FF;
+}
+
+
+
+/*######################################################################
+#   fc-object-graph/array
+#####################################################################*/
+
+SPAN.__domrep__fc-object-graph-array > SPAN {
+    color: brown;
+    font-weight: bold;
+}
+
+SPAN.__domrep__fc-object-graph-array > DIV.element {
+    display: block;
+    padding-left: 9px;
+}
+
+SPAN.__domrep__fc-object-graph-array > SPAN.element {
+    padding-left: 2px;
+}
+
+SPAN.__domrep__fc-object-graph-array > .element > SPAN.separator {
+    color: brown;
+    font-weight: bold;
+}
+
+
+
+/*######################################################################
+#   fc-object-graph/map
+#####################################################################*/
+
+SPAN.__domrep__fc-object-graph-map > SPAN {
+    color: brown;
+    font-weight: bold;
+}
+
+SPAN.__domrep__fc-object-graph-map > DIV.pair {
+    display: block;
+    padding-left: 9px;
+}
+
+SPAN.__domrep__fc-object-graph-map > SPAN.pair {
+    padding-left: 2px;
+}
+
+SPAN.__domrep__fc-object-graph-map > .pair > SPAN.delimiter,
+SPAN.__domrep__fc-object-graph-map > .pair > SPAN.separator {
+    color: brown;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+
+
+/*######################################################################
+#   fc-object-graph/reference
+#####################################################################*/
+
+SPAN.__domrep__fc-object-graph-reference {
+}
+
+
+
+/*######################################################################
+#   fc-object-graph/dictionary
+#####################################################################*/
+
+
+SPAN.__domrep__fc-object-graph-dictionary > SPAN {
+    color: brown;
+    font-weight: bold;
+}
+
+SPAN.__domrep__fc-object-graph-dictionary > DIV.member {
+    display: block;
+    padding-left: 9px;
+}
+
+SPAN.__domrep__fc-object-graph-dictionary > SPAN.member {
+    padding-left: 2px;
+}
+
+SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.name {
+    color: #E59D07;
+}
+
+SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.delimiter,
+SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.separator {
+    color: brown;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+

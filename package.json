@@ -27,6 +27,10 @@
         "content": {
             "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
             "name": "content"
+        },
+        "fc-object-graph": {
+            "catalog": "http://github.com/cadorn/domplate-reps/raw/master/catalog.json",
+            "name": "fc-object-graph"
         }
     }
 }
