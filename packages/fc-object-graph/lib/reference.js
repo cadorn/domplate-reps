@@ -8,14 +8,21 @@ with (DOMPLATE.tags) {
 
         CONST_Normal: "tag",
         CONST_Short: "shortTag",
+        CONST_Collapsed: "collapsedTag",
 
-        tag: SPAN({"class": "__domrep__fc-object-graph-reference"},
-                  TAG("$node,$CONST_Normal|getTag", {"node": "$node|getInstanceNode"})),
+        tag:
+            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            TAG("$node,$CONST_Normal|getTag", {"node": "$node|getInstanceNode"})),
         
-        shortTag: SPAN({"class": "__domrep__fc-object-graph-reference"},
-                  TAG("$node,$CONST_Short|getTag", {"node": "$node|getInstanceNode"})),
-                        
+        shortTag:
+            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            TAG("$node,$CONST_Short|getTag", {"node": "$node|getInstanceNode"})),
 
+        collapsedTag:
+            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            TAG("$node,$CONST_Collapsed|getTag", {"node": "$node|getInstanceNode"})),
+
+            
         getTag: function(node, type) {
             return this.getRepForNode(this.getInstanceNode(node))[type];
         },
