@@ -1,20 +1,24 @@
 
+var TEMPLATE = require("template", "template-pack");
+var template = exports.template = TEMPLATE.Template(module);
 
+template.supportsNode = function(node) {
+    return (node.type=="text");
+};
 
-var DOMPLATE = require("domplate", "domplate");
-var DEFAULT_REP = require("default-rep", "domplate");
+template.onLoad = function(pack, tags){with(tags) {
 
-with (DOMPLATE.tags) {
+    pack.addCss("common.css");
 
-    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
+    return {
 
-        tag: SPAN({"class": "__domrep__fc-object-graph-text"},
+        tag: SPAN({"class": pack.getKey()+"text"},
                   "'",
                   FOR("line", "$node.value|lineIterator", "$line.value",
                       IF("$line.more", BR())),
                   "'"),
         
-        shortTag: SPAN({"class": "__domrep__fc-object-graph-text"},
+        shortTag: SPAN({"class": pack.getKey()+"text"},
                             "'$node.value|cropString'"),
                 
         cropString: function(text, limit){
@@ -43,12 +47,6 @@ with (DOMPLATE.tags) {
                 lines.push({"value": parts[i], "more": (i<parts.length-1)});
             }
             return lines;
-        },
-
-        supportsNode: function(node) {
-            return (node.type=="text");
         }
-        
-    }));
-
-}
+    }
+}};

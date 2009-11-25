@@ -1,21 +1,23 @@
 
+var TEMPLATE = require("template", "template-pack");
+var template = exports.template = TEMPLATE.Template(module);
 
-function dump(obj) { print(require('test/jsdump').jsDump.parse(obj)) };
+template.supportsNode = function(node) {
+    return (node.type=="dictionary");
+};
 
+template.onLoad = function(pack, tags){with(tags) {
 
-var DOMPLATE = require("domplate", "domplate");
-var DEFAULT_REP = require("default-rep", "domplate");
+    pack.addCss("common.css");
 
-with (DOMPLATE.tags) {
+    return {
 
-    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
-        
         CONST_Normal: "tag",
         CONST_Short: "shortTag",
         CONST_Collapsed: "collapsedTag",
 
         tag:
-            SPAN({"class": "__domrep__fc-object-graph-dictionary"}, SPAN("dictionary("),
+            SPAN({"class": pack.getKey()+"dictionary"}, SPAN("dictionary("),
                 FOR("member", "$node|dictionaryIterator",
                     DIV({"class": "member", "$expandable":"$member.expandable", "_memberObject": "$member", "onclick": "$onClick"},
                         SPAN({"class": "name"}, "$member.name"),
@@ -29,12 +31,12 @@ with (DOMPLATE.tags) {
             SPAN(")")),
 
         shortTag:
-            SPAN({"class": "__domrep__fc-object-graph-dictionary"}, SPAN("dictionary("),
+            SPAN({"class": pack.getKey()+"dictionary"}, SPAN("dictionary("),
                 SPAN({"class": "member"}, "members: $node|getMemberCount"),
             SPAN(")")),
 
         collapsedTag:
-            SPAN({"class": "__domrep__fc-object-graph-dictionary"}, SPAN("dictionary("),
+            SPAN({"class": pack.getKey()+"dictionary"}, SPAN("dictionary("),
                 SPAN({"class": "collapsed"}, "... $node|getMemberCount ..."),
             SPAN(")")),
         
@@ -120,19 +122,15 @@ with (DOMPLATE.tags) {
                     "node": row.memberObject.node
                 }, valueElement);
             } else {
-              this.util.setClass(row, "expanded");
-              this.expandedStub.replace({
-                  "tag": this.getRepForNode(row.memberObject.node).tag,
+                this.util.setClass(row, "expanded");
+                this.expandedStub.replace({
+                    "tag": this.getRepForNode(row.memberObject.node).tag,
                     "member": row.memberObject,
-                  "node": row.memberObject.node
-              }, valueElement);
+                    "node": row.memberObject.node
+                }, valueElement);
             }
-        },
-                   
-        supportsNode: function(node) {
-            return (node.type=="dictionary");
         }
-        
-    }));
 
-}
+    }    
+}};
+

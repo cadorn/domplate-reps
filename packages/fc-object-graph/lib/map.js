@@ -1,16 +1,22 @@
 
-var DOMPLATE = require("domplate", "domplate");
-var DEFAULT_REP = require("default-rep", "domplate");
+var TEMPLATE = require("template", "template-pack");
+var template = exports.template = TEMPLATE.Template(module);
 
-with (DOMPLATE.tags) {
+template.supportsNode = function(node) {
+    return (node.type=="map");
+};
 
-    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
-        
+template.onLoad = function(pack, tags){with(tags) {
+
+    pack.addCss("common.css");
+
+    return {
+
         CONST_Normal: "tag",
         CONST_Short: "shortTag",
 
         tag:
-            SPAN({"class": "__domrep__fc-object-graph-map"}, SPAN("map("),
+            SPAN({"class": pack.getKey()+"map"}, SPAN("map("),
                 FOR("pair", "$node,$CONST_Normal|mapIterator",
                     DIV({"class": "pair"},
                         TAG("$pair.key.tag", {"node": "$pair.key.node"}),
@@ -23,7 +29,7 @@ with (DOMPLATE.tags) {
 
 
         shortTag:
-            SPAN({"class": "__domrep__fc-object-graph-map"}, SPAN("map("),
+            SPAN({"class": pack.getKey()+"map"}, SPAN("map("),
                 FOR("pair", "$node,$CONST_Short|mapIterator",
                     SPAN({"class": "pair"},
                         TAG("$pair.key.tag", {"node": "$pair.key.node"}),
@@ -50,12 +56,7 @@ with (DOMPLATE.tags) {
                 });
             }
             return pairs;
-        },
-             
-        supportsNode: function(node) {
-            return (node.type=="map");
         }
-        
-    }));
+    }    
+}};
 
-}

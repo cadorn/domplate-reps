@@ -1,44 +1,44 @@
 
 
 /*######################################################################
-#   fc-object-graph/text
+#   text
 #####################################################################*/
 
-SPAN.__domrep__fc-object-graph-text {
+SPAN.__KEY__text {
   color: #FF0000;
 }
 
 
 
 /*######################################################################
-#   fc-object-graph/constant
+#   constant
 #####################################################################*/
 
-SPAN.__domrep__fc-object-graph-constant {
+SPAN.__KEY__constant {
   color: #0000FF;
 }
 
 
 
 /*######################################################################
-#   fc-object-graph/array
+#   array
 #####################################################################*/
 
-SPAN.__domrep__fc-object-graph-array > SPAN {
+SPAN.__KEY__array > SPAN {
     color: brown;
     font-weight: bold;
 }
 
-SPAN.__domrep__fc-object-graph-array > DIV.element {
+SPAN.__KEY__array > DIV.element {
     display: block;
     padding-left: 20px;
 }
 
-SPAN.__domrep__fc-object-graph-array > SPAN.element {
+SPAN.__KEY__array > SPAN.element {
     padding-left: 2px;
 }
 
-SPAN.__domrep__fc-object-graph-array > .element > SPAN.separator {
+SPAN.__KEY__array > .element > SPAN.separator {
     color: brown;
     font-weight: bold;
 }
@@ -46,25 +46,25 @@ SPAN.__domrep__fc-object-graph-array > .element > SPAN.separator {
 
 
 /*######################################################################
-#   fc-object-graph/map
+#   map
 #####################################################################*/
 
-SPAN.__domrep__fc-object-graph-map > SPAN {
+SPAN.__KEY__map > SPAN {
     color: brown;
     font-weight: bold;
 }
 
-SPAN.__domrep__fc-object-graph-map > DIV.pair {
+SPAN.__KEY__map > DIV.pair {
     display: block;
     padding-left: 20px;
 }
 
-SPAN.__domrep__fc-object-graph-map > SPAN.pair {
+SPAN.__KEY__map > SPAN.pair {
     padding-left: 2px;
 }
 
-SPAN.__domrep__fc-object-graph-map > .pair > SPAN.delimiter,
-SPAN.__domrep__fc-object-graph-map > .pair > SPAN.separator {
+SPAN.__KEY__map > .pair > SPAN.delimiter,
+SPAN.__KEY__map > .pair > SPAN.separator {
     color: brown;
     font-weight: bold;
     padding-left: 2px;
@@ -75,57 +75,57 @@ SPAN.__domrep__fc-object-graph-map > .pair > SPAN.separator {
 
 
 /*######################################################################
-#   fc-object-graph/reference
+#   reference
 #####################################################################*/
 
-SPAN.__domrep__fc-object-graph-reference {
+SPAN.__KEY__reference {
 }
 
 
 
 /*######################################################################
-#   fc-object-graph/dictionary
+#   dictionary
 #####################################################################*/
 
 
-SPAN.__domrep__fc-object-graph-dictionary > SPAN {
+SPAN.__KEY__dictionary > SPAN {
     color: brown;
     font-weight: bold;
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > SPAN.collapsed {
+SPAN.__KEY__dictionary > SPAN.collapsed {
     color: #0000FF;
     font-weight: normal;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > SPAN.member {
+SPAN.__KEY__dictionary > SPAN.member {
     color: brown;
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > DIV.member {
+SPAN.__KEY__dictionary > DIV.member {
     display: block;
     padding-left: 20px;
 }
-SPAN.__domrep__fc-object-graph-dictionary > DIV.member.expandable {
-    background-image: url(__Package.ResourcesBaseURL__images/TwistyClosed.png);
+SPAN.__KEY__dictionary > DIV.member.expandable {
+    background-image: url(__RESOURCE__images/TwistyClosed.png);
     background-repeat: no-repeat;
     background-position: 6px 2px;
 }
-SPAN.__domrep__fc-object-graph-dictionary > DIV.member.expandable.expanded {
-    background-image: url(__Package.ResourcesBaseURL__images/TwistyOpen.png);
+SPAN.__KEY__dictionary > DIV.member.expandable.expanded {
+    background-image: url(__RESOURCE__images/TwistyOpen.png);
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.name {
+SPAN.__KEY__dictionary > .member > SPAN.name {
     color: #E59D07;
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.value {
+SPAN.__KEY__dictionary > .member > SPAN.value {
 }
 
-SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.delimiter,
-SPAN.__domrep__fc-object-graph-dictionary > .member > SPAN.separator {
+SPAN.__KEY__dictionary > .member > SPAN.delimiter,
+SPAN.__KEY__dictionary > .member > SPAN.separator {
     color: brown;
     font-weight: bold;
     padding-left: 2px;

@@ -1,21 +1,22 @@
 
-var DOMPLATE = require("domplate", "domplate");
-var DEFAULT_REP = require("default-rep", "domplate");
+var TEMPLATE = require("template", "template-pack");
+var template = exports.template = TEMPLATE.Template(module);
 
-with (DOMPLATE.tags) {
+template.supportsNode = function(node) {
+    return (node.type=="constant");
+};
 
-    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
+template.onLoad = function(pack, tags){with(tags) {
 
-        tag: SPAN({"class": "__domrep__fc-object-graph-constant"},
+    pack.addCss("common.css");
+
+    return {
+
+        tag: SPAN({"class": pack.getKey()+"constant"},
                   "$node.value"),
         
-        shortTag: SPAN({"class": "__domrep__fc-object-graph-constant"},
-                       "$node.value"),
+        shortTag: SPAN({"class": pack.getKey()+"constant"},
+                       "$node.value")
+    }    
+}};
 
-        supportsNode: function(node) {
-            return (node.type=="constant");
-        }
-        
-    }));
-
-}

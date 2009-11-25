@@ -1,25 +1,31 @@
 
-var DOMPLATE = require("domplate", "domplate");
-var DEFAULT_REP = require("default-rep", "domplate");
+var TEMPLATE = require("template", "template-pack");
+var template = exports.template = TEMPLATE.Template(module);
 
-with (DOMPLATE.tags) {
+template.supportsNode = function(node) {
+    return (node.type=="reference");
+};
 
-    exports.rep = DOMPLATE.domplate(DEFAULT_REP.extend({
+template.onLoad = function(pack, tags){with(tags) {
+
+    pack.addCss("common.css");
+
+    return {
 
         CONST_Normal: "tag",
         CONST_Short: "shortTag",
         CONST_Collapsed: "collapsedTag",
 
         tag:
-            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            SPAN({"class": pack.getKey()+"reference"},
             TAG("$node,$CONST_Normal|getTag", {"node": "$node|getInstanceNode"})),
         
         shortTag:
-            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            SPAN({"class": pack.getKey()+"reference"},
             TAG("$node,$CONST_Short|getTag", {"node": "$node|getInstanceNode"})),
 
         collapsedTag:
-            SPAN({"class": "__domrep__fc-object-graph-reference"},
+            SPAN({"class": pack.getKey()+"reference"},
             TAG("$node,$CONST_Collapsed|getTag", {"node": "$node|getInstanceNode"})),
 
             
@@ -29,12 +35,6 @@ with (DOMPLATE.tags) {
         
         getInstanceNode: function(node) {
             return node.getInstance();
-        },
-
-        supportsNode: function(node) {
-            return (node.type=="reference");
         }
-        
-    }));
-
-}
+    }    
+}};

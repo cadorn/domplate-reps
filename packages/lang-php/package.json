@@ -1,5 +1,6 @@
 {
     "name": "lang-php",
+    "uid": "http://pinf.org/cadorn.org/domplate-reps/packages/fc-object-graph",
     "using": {
         "domplate": {
             "location": "http://github.com/cadorn/domplate/zipball/master/"
